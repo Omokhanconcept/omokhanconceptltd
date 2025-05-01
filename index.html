@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Omokhan Concept Tech</title>
+
+  <!-- Bootstrap 5.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="./img/logo.jpg">
+
+<style>
+/* General Body Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 0;
+  
+}
+
+/* Navbar Styles */
+.navbar {
+  background-color: #1a1a2e;
+  font-weight: bold;  
+}
+
+.navbar-brand {
+  color: white !important;
+  font-size: 2.2rem;
+  font-weight: bolder;
+}
+
+.nav-link {
+  color: #f5f5f5 !important;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+.nav-link:hover {
+  color: #f5f5f5 !important;
+}
+
+/* Image Box and Overlay Styles */
+.image-box {
+  position: relative;
+  overflow: hidden;
+}
+
+.image-box img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+.overlay-text {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: top 0.4s ease;
+  border-radius: 8px;
+  overflow: hidden; /* Hides any content that overflows */
+}
+
+.image-box:hover .overlay-text {
+  top: 0;
+}
+
+/* Card Hover Effects */
+.card:hover {
+  transform: translateY(-5px);
+  transition: 0.3s ease;
+}
+
+/* Section 2: Our Services Styles */
+#services {
+  padding: 50px 0;
+}
+
+#services .card-body p {
+  text-align: justify;
+}
+
+.card {
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-top-left-radius: 0.375rem;
+  border-bottom-left-radius: 0.375rem;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+/* Section 3: What We Offer Styles */
+#whatWeOffer {
+  padding: 50px 0;
+  background-color: #f1f1f1;
+}
+
+#whatWeOffer .card-body {
+  background-color: #fff;
+  text-align: center;
+  padding: 15px;
+  border: 1px solid #ddd;
+}
+
+#whatWeOffer .card-body p {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #142850;
+}
+
+.card {
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer Styles */
+footer {
+  background-color: #1a1a2e;
+  color: white;
+  padding: 30px 0;
+  text-align: center;
+}
+
+footer .footer-icons img {
+  width: 40px;
+  margin: 0 10px;
+  transition: transform 0.3s ease;
+}
+
+footer .footer-icons img:hover {
+  transform: scale(1.1);
+}
+
+footer a {
+  text-decoration: none;
+}
+
+footer p {
+  margin-bottom: 20px;
+  font-size: 1rem;
+}
+
+footer a:hover img {
+  transform: scale(1.1);
+}
+
+/* Carousel Styles */
+.carousel {
+  position: relative;
+  height: 100vh;
+}
+
+.carousel-inner {
+  height: 100%;
+}
+
+.carousel-item img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel-caption h5 {
+  font-size: 2rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  /* Navbar */
+  .navbar-brand {
+    font-size: 1rem;
+  }
+
+  .navbar-nav {
+    text-align: center;
+  }
+
+  .navbar-nav .nav-item {
+    margin-bottom: 10px;
+  }
+
+  /* Image Box and Overlay */
+  .overlay-text {
+    font-size: 1rem;
+  }
+
+  /* Service Cards */
+  #services h2 {
+    font-size: 1.4rem;
+  }
+
+  .card-body p {
+    font-size: 0.9rem;
+  }
+
+  /* For smaller screen sizes */
+  .card {
+    margin-bottom: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .card img {
+    max-height: 250px;
+  }
+
+  /* What We Offer Section */
+  #whatWeOffer .card-body {
+    padding: 10px;
+  }
+
+  #whatWeOffer .card-body p {
+    font-size: 1rem;
+  }
+
+  /* Carousel Adjustments for Mobile */
+  .carousel-caption h5 {
+    font-size: 1.5rem;
+  }
+
+  /* Footer Adjustments */
+  footer p {
+    font-size: 0.9rem;
+  }
+
+  footer .footer-icons img {
+    width: 30px;
+    margin: 0 8px;
+  }
+}
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <div class="container">
+    <a class="navbar-brand" href="#">OMOKHAN CONCEPT TECH LTD</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#services">Our Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="#ourgalary">Our Galary</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
+              </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Fullscreen Bootstrap Carousel -->
+<div id="imageCarousel" class="carousel slide" data-bs-ride="carousel" style="width: 100vw; height: 80vh; overflow: hidden;">
+  <div class="carousel-inner" style="height: 100%;">
+    <!-- Slide 1 -->
+    <div class="carousel-item active" style="height: 100%;">
+      <img src="./img/o1.jpg" class="d-block w-100" style="height: 100%; object-fit: cover;" alt="Construction 1">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>GENERAL CONTRACTOR SERVICE</h5>
+      </div>
+    </div>
+    <!-- Slide 2 -->
+    <div class="carousel-item" style="height: 100%;">
+      <img src="./img/O2.jpg" class="d-block w-100" style="height: 100%; object-fit: cover;" alt="Construction 2">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>SOLAR INSTALLATION SERVICE</h5>
+      </div>
+    </div>
+    <!-- Slide 3 -->
+    <div class="carousel-item" style="height: 100%;">
+      <img src="./img/O3.jpg" class="d-block w-100" style="height: 100%; object-fit: cover;" alt="Construction 3">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>RELIABLE WATER BOREHOLE DRILLING</h5>
+      </div>
+    </div>
+    <!-- Slide 4 -->
+    <div class="carousel-item" style="height: 100%;">
+      <img src="./img/O4.jpg" class="d-block w-100" style="height: 100%; object-fit: cover;" alt="Construction 4">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>DRILLING & MINING SOLUTIONS</h5>
+      </div>
+    </div>
+  </div>
+
+  <!-- Controls -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#imageCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#imageCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+
+  <!-- Indicators -->
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#imageCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#imageCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#imageCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <button type="button" data-bs-target="#imageCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+  </div>
+</div>
+
+
+<!-- Section 2: Our Services -->
+<section id="services" class="container my-5">
+    <h2 class="text-center mb-4" style="color: #142850; border: solid  #142850; background-color:  
+    #142850; border-radius: 15px; padding: 3px; color: white; font-weight: bolder; font-size: 30px;">OUR SERVICES/WHAT WE OFFERS:</h2>
+    <div class="row">
+      <!-- Card Example -->
+      <div class="col-md-6 mb-4">
+        <div class="card shadow-sm">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="./img/general contractor.jpg" class="img-fluid rounded-start" alt="Service One Image">
+            </div>
+            <div class="col-md-8 d-flex align-items-center">
+              <div class="card-body">
+                <h5 class="card-title">We Are Trusted General Contractors</h5>
+                <p class="card-text">We bring your construction dreams to life from the ground up. 
+                    As experienced general contractors, we manage every stage of your project with precision, 
+                    care, and professionalism. From planning and permits to hiring skilled tradespeople and delivering 
+                    high-quality finishes, we handle it all so you don’t have to. Whether it’s a renovation or a new build, 
+                    we make the process smooth, efficient, and stress-free.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Repeat for other services -->
+      <div class="col-md-6 mb-4">
+        <div class="card shadow-sm">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="./img/solar installation.jpg" class="img-fluid rounded-start" alt="Service Two Image">
+            </div>
+            <div class="col-md-8 d-flex align-items-center">
+              <div class="card-body">
+                <h5 class="card-title">Solar Installation Services</h5>
+                <p class="card-text">Switch to clean, renewable energy with our professional solar installation services.
+                    At Omokhan Concept, we design and install high-efficiency solar systems tailored to your home or business. 
+                    Our team handles everything from consultation and permits to seamless installation and support. Start saving 
+                    on energy bills while making a positive impact on the environment. Go solar with confidence, backed by quality 
+                    workmanship and expert guidance.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Continue for Service Three to Six -->
+            <!-- Card Example -->
+            <div class="col-md-6 mb-4">
+                <div class="card shadow-sm">
+                  <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="./img/plumbing.jpg" class="img-fluid rounded-start" alt="Service One Image" width="400" height="300">
+                      </div>
+                    <div class="col-md-8 d-flex align-items-center">
+                      <div class="card-body">
+                        <h5 class="card-title">Plumbing Services You Can Trust</h5>
+                        <p class="card-text">From leaks and blockages to full plumbing system installations, Omokhan Concept Tech 
+                            delivers fast, reliable, and affordable plumbing solutions. Our certified plumbers handle residential 
+                            and commercial needs with precision using quality materials and modern tools to ensure long-lasting results. 
+                            Whether it's emergency repairs or new construction, we keep your water flowing smoothly.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+                    <!-- Card Example -->
+      <div class="col-md-6 mb-4">
+        <div class="card shadow-sm">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="./img/drilling.jpg" class="img-fluid rounded-start" alt="Service One Image">
+            </div>
+            <div class="col-md-8 d-flex align-items-center">
+              <div class="card-body">
+                <h5 class="card-title">Drilling & Mining Solutions</h5>
+                <p class="card-text">We specialize in safe, efficient drilling and mining operations tailored to meet industrial 
+                    and commercial demands. From mineral exploration to core drilling and site development, our team brings advanced 
+                    technology, skilled operators, and strict safety standards to every project. Whether small-scale or large-scale, 
+                    we deliver results that power progress on time and within budget.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+            <!-- Card Example -->
+            <div class="col-md-6 mb-4">
+                <div class="card shadow-sm">
+                  <div class="row g-0">
+                    <div class="col-md-4">
+                      <img src="./img/borehole.jpg" class="img-fluid rounded-start" alt="Service One Image">
+                    </div>
+                    <div class="col-md-8 d-flex align-items-center">
+                      <div class="card-body">
+                        <h5 class="card-title">Reliable Water Borehole Drilling</h5>
+                        <p class="card-text">Gain access to a dependable and cost-effective water source with our borehole drilling services.
+                            We deliver turnkey water solutions for homes, farms, and businesses — from site survey and drilling to pump 
+                            installation and testing. Our experienced team uses modern equipment to ensure clean, sustainable groundwater 
+                            access. Whether for daily use or irrigation, trust us to deliver safe, long-term water solutions.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+                    <!-- Card Example -->
+      <div class="col-md-6 mb-4">
+        <div class="card shadow-sm">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="./img/painting.jpg" class="img-fluid rounded-start" alt="Service One Image">
+            </div>
+            <div class="col-md-8 d-flex align-items-center">
+              <div class="card-body">
+                <h5 class="card-title">Stylish Painting & Interior Decoration</h5>
+                <p class="card-text">Transform your space with Omokhan Concept Tech painting and decoration services. 
+                    We bring walls to life with premium finishes, elegant color schemes, and flawless detail tailored 
+                    to your style. Whether it’s a fresh coat for your home, a bold look for your office, or decorative 
+                    accents that stand out, our team delivers clean, professional results that elevate any space.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- You can duplicate the structure and update images and text accordingly -->
+    </div>
+  </section>
+  
+
+<!-- Section 3: What We Offer -->
+<section id="ourgalary" class="container my-5">
+    <h3 class="text-center mb-4" style="color: #142850; border: solid  #142850; background-color:  #142850; border-radius: 15px; padding: 3px; color: white; font-weight: bolder; font-size: 30px;">OUR GALARY VIEWS</h3>
+    <div class="row">
+      <div class="col-md-3 mb-3">
+        <div class="card" style="height: 250px;">
+          <div class="card-body" style="padding: 10px;">
+            <img id="img1" src="./img/omokhan.jpg" alt="Preview Image" style="width: 100%; height: 200px; object-fit: cover; border-radius: 5px;">
+          </div>
+        </div>
+      </div>
+  
+      <div class="col-md-3 mb-3">
+        <div class="card" style="height: 250px;">
+          <div class="card-body" style="padding: 10px;">
+            <img id="img2" src="./img/IMG-20231121-WA0022.jpg" alt="Preview Image" style="width: 100%; height: 200px; object-fit: cover; border-radius: 5px;">
+          </div>
+        </div>
+      </div>
+  
+      <div class="col-md-3 mb-3">
+        <div class="card" style="height: 250px;">
+          <div class="card-body" style="padding: 10px;">
+            <img id="img3" src="./img/IMG-20231122-WA0006.jpg" alt="Preview Image" style="width: 100%; height: 200px; object-fit: cover; border-radius: 5px;">
+          </div>
+        </div>
+      </div>
+  
+      <div class="col-md-3 mb-3">
+        <div class="card" style="height: 250px;">
+          <div class="card-body" style="padding: 10px;">
+            <img id="img4" src="./img/IMG-20231122-WA0007.jpg" alt="Preview Image" style="width: 100%; height: 200px; object-fit: cover; border-radius: 5px;">
+          </div>
+        </div>
+      </div>
+  
+      <div class="col-md-3 mb-3">
+        <div class="card" style="height: 250px;">
+          <div class="card-body" style="padding: 10px;">
+            <img id="img5" src="./img/IMG-20231122-WA0012.jpg" alt="Preview Image" style="width: 100%; height: 200px; object-fit: cover; border-radius: 5px;">
+          </div>
+        </div>
+      </div>
+  
+      <div class="col-md-3 mb-3">
+        <div class="card" style="height: 250px;">
+          <div class="card-body" style="padding: 10px;">
+            <img id="img6" src="./img/IMG-20231122-WA0016.jpg" alt="Preview Image" style="width: 100%; height: 200px; object-fit: cover; border-radius: 5px;">
+          </div>
+        </div>
+      </div>
+  
+      <div class="col-md-3 mb-3">
+        <div class="card" style="height: 250px;">
+          <div class="card-body" style="padding: 10px;">
+            <img id="img7" src="./img/IMG-20231122-WA0017.jpg" alt="Preview Image" style="width: 100%; height: 200px; object-fit: cover; border-radius: 5px;">
+          </div>
+        </div>
+      </div>
+  
+      <div class="col-md-3 mb-3">
+        <div class="card" style="height: 250px;">
+          <div class="card-body" style="padding: 10px;">
+            <img id="img8" src="./img/IMG-20231122-WA0018.jpg" alt="Preview Image" style="width: 100%; height: 200px; object-fit: cover; border-radius: 5px;">
+          </div>
+        </div>
+      </div>
+  
+      <div class="col-md-3 mb-3">
+        <div class="card" style="height: 250px;">
+          <div class="card-body" style="padding: 10px;">
+            <img id="img1" src="./img/IMG-20231122-WA0023.jpg" alt="Preview Image" style="width: 100%; height: 200px; object-fit: cover; border-radius: 5px;">
+          </div>
+        </div>
+      </div>
+  
+      <div class="col-md-3 mb-3">
+        <div class="card" style="height: 250px;">
+          <div class="card-body" style="padding: 10px;">
+            <img id="img2" src="./img/IMG-20231122-WA0025.jpg" alt="Preview Image" style="width: 100%; height: 200px; object-fit: cover; border-radius: 5px;">
+          </div>
+        </div>
+      </div>
+  
+      <div class="col-md-3 mb-3">
+        <div class="card" style="height: 250px;">
+          <div class="card-body" style="padding: 10px;">
+            <img id="img3" src="./img/IMG-20231122-WA0030.jpg" alt="Preview Image" style="width: 100%; height: 200px; object-fit: cover; border-radius: 5px;">
+          </div>
+        </div>
+      </div>
+  
+      <div class="col-md-3 mb-3">
+        <div class="card" style="height: 250px;">
+          <div class="card-body" style="padding: 10px;">
+            <img id="img4" src="./img/IMG-20231122-WA0032.jpg" alt="Preview Image" style="width: 100%; height: 200px; object-fit: cover; border-radius: 5px;">
+          </div>
+        </div>
+      </div>
+  
+      <div class="col-md-3 mb-3">
+        <div class="card" style="height: 250px;">
+          <div class="card-body" style="padding: 10px;">
+            <img id="img1" src="./img/IMG-20231122-WA0034.jpg" alt="Preview Image" style="width: 100%; height: 200px; object-fit: cover; border-radius: 5px;">
+          </div>
+        </div>
+      </div>
+  
+      <div class="col-md-3 mb-3">
+        <div class="card" style="height: 250px;">
+          <div class="card-body" style="padding: 10px;">
+            <img id="img2" src="./img/IMG-20231122-WA0039.jpg" alt="Preview Image" style="width: 100%; height: 200px; object-fit: cover; border-radius: 5px;">
+          </div>
+        </div>
+      </div>
+  
+      <div class="col-md-3 mb-3">
+        <div class="card" style="height: 250px;">
+          <div class="card-body" style="padding: 10px;">
+            <img id="img3" src="./img/IMG-20231121-WA0021.jpg" alt="Preview Image" style="width: 100%; height: 200px; object-fit: cover; border-radius: 5px;">
+          </div>
+        </div>
+      </div>
+  
+      <div class="col-md-3 mb-3">
+        <div class="card" style="height: 250px;">
+          <div class="card-body" style="padding: 10px;">
+            <img id="img4" src="./img/omo2.jpg" alt="Preview Image" style="width: 100%; height: 200px; object-fit: cover; border-radius: 5px;">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="container my-5">
+    <h3 class="text-center mb-4" style="color: #142850; border: solid  #142850; background-color:  
+    #142850; border-radius: 15px; padding: 3px; color: white; font-weight: bolder; font-size: 30px;">ABOUT US</h3>
+    
+        <div class="row mt-4">
+          <!-- Left Card: About Our Company -->
+          <div class="col-md-6 mb-4">
+            <div class="card" style="height: 100%; border-radius: 10px; border: 1px solid #ccc;">
+              <div class="card-body" style="padding: 20px;">
+                <h4 style="color: #142850; font-weight: bold; margin-bottom: 15px;">About Our Company</h4>
+                  <p style="font-size: 16px; line-height: 1.6; text-align: justify;">
+                    We are a customer-focused organization dedicated to delivering high-quality services and solutions.
+                    Our expert team brings innovation and reliability to every project. We believe in building lasting
+                    relationships by exceeding expectations and delivering outstanding value to our clients.
+                    Omokhan Concept Tech are your trusted partner in general contracting, solar installation, water borehole 
+                    drilling, and mining solutions. With years of industry experience, we specialize in providing high-quality 
+                    services that meet your unique needs. Our general contracting services cover everything from residential and 
+                    commercial construction to infrastructure development and project management. We also offer advanced solar energy 
+                    solutions, including installation and maintenance of solar systems for homes and businesses. Additionally, our 
+                    water borehole drilling services ensure reliable access to clean water for agriculture, industry, and residential use. 
+                    Our mining services include exploration, drilling, and extraction, always prioritizing safety and environmental responsibility. 
+                    Whatever your project needs, be it construction, renewable energy, water solutions, or mining, we have the expertise and dedication 
+                    to bring your vision to life. Contact us today to discuss your next project!
+                  </p>
+
+              </div>
+            </div>
+          </div>
+      
+         <!-- Right Card: Contact Us Form with Validation -->
+         <div class="col-md-6 mb-4">
+          <div class="card" style="height: 100%; border-radius: 10px; border: 1px solid #ccc;">
+            <div class="card-body" style="padding: 20px;">
+              <h4 style="color: #0b2049; font-weight: bold; margin-bottom: 20px;">Contact Us</h4>
+              <form id="contactForm">
+                <div class="form-group" style="margin-bottom: 20px;">
+                  <label for="name" style="font-size: 16px;">Name:</label>
+                  <input type="text" id="name" class="form-control" required>
+                  <small id="nameError" class="form-text text-danger" style="margin-top: 5px;"></small>
+                </div>
+                
+                <div class="form-group" style="margin-bottom: 20px;">
+                  <label for="email" style="font-size: 16px;">Email:</label>
+                  <input type="email" id="email" class="form-control" required>
+                  <small id="emailError" class="form-text text-danger" style="margin-top: 5px;"></small>
+                </div>
+                
+                <div class="form-group" style="margin-bottom: 20px;">
+                  <label for="phone" style="font-size: 16px;">Phone:</label>
+                  <input type="tel" id="phone" class="form-control" required>
+                  <small id="phoneError" class="form-text text-danger" style="margin-top: 5px;"></small>
+                </div>
+                
+                <div class="form-group" style="margin-bottom: 20px;">
+                  <label for="message" style="font-size: 16px;">Message:</label>
+                  <textarea id="message" class="form-control" rows="4" required></textarea>
+                  <small id="messageError" class="form-text text-danger" style="margin-top: 5px;"></small>
+                </div>
+        
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+              </form>
+            </div>
+          </div>
+        </div>        
+
+        
+<!-- Footer -->
+<footer>
+  <div class="text-center">
+    <p>© 2025 ContractorCo. All rights reserved.</p>
+    <div class="footer-icons">
+      <a href="https://wa.me/08038863201" target="_blank">
+        <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp"/>
+      </a>
+      <a href="https://facebook.com/profile.php?id=61575931524547" target="_blank">
+        <img src="https://img.icons8.com/color/48/000000/facebook-new.png" alt="Facebook"/>
+      </a>
+      <a href="https://tiktok.com" target="_blank">
+        <img src="https://img.icons8.com/color/48/000000/tiktok--v1.png" alt="TikTok"/>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent form submission
+
+    let isValid = true;
+
+    // Clear previous error messages
+    document.getElementById('nameError').textContent = '';
+    document.getElementById('emailError').textContent = '';
+    document.getElementById('phoneError').textContent = '';
+    document.getElementById('messageError').textContent = '';
+
+    // Name validation
+    const name = document.getElementById('name').value;
+    if (!name.match(/^[A-Za-z\s]+$/)) {
+      document.getElementById('nameError').textContent = 'Name must contain only letters and spaces.';
+      isValid = false;
+    }
+
+    // Email validation
+    const email = document.getElementById('email').value;
+    if (!email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
+      document.getElementById('emailError').textContent = 'Please enter a valid email address.';
+      isValid = false;
+    }
+
+    // Phone validation
+    const phone = document.getElementById('phone').value;
+    if (!phone.match(/^[0-9\s()+-]+$/)) {
+      document.getElementById('phoneError').textContent = 'Please enter a valid phone number.';
+      isValid = false;
+    }
+
+    // Message validation
+    const message = document.getElementById('message').value;
+    if (message.trim() === '') {
+      document.getElementById('messageError').textContent = 'Message cannot be empty.';
+      isValid = false;
+    }
+
+    // If all validations pass, submit the form
+    if (isValid) {
+      alert('Form submitted successfully!');
+      // Here, you can add code to actually submit the form data to your server
+      // For example, using fetch() or XMLHttpRequest
+    }
+  });
+</script>
+<!-- Bootstrap JS Bundle (includes Popper) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
